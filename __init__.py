@@ -184,7 +184,7 @@ def gdisconnect():
 def catalogs():
     # list for nav menu
     catalogs = session.query(Catalog).all()
-    catalogItems = session.query(CatalogItem).order_by(desc(catalogItem.id)).limit(10)
+    catalogItems = session.query(CatalogItem).order_by(desc(CatalogItem.id)).limit(10)
 
     # load items menu when logged out
     if 'username' not in login_session:
