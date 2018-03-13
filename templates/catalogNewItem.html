@@ -1,0 +1,37 @@
+{% extends "login.html" %}
+{% block body %}
+  <form action="{{ url_for('catalogNewItem', catalogs = catalogs) }}" method="post" class="form-horizontal">
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="name">Name:</label>
+
+      <div class="col-sm-6">
+        <input type="text" size="30" class="form-control" placeholder="Enter Name" name="name">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="description">Description:</label>
+
+      <div class="col-sm-6">
+        <input type="text" size="30" class="form-control" placeholder="Enter Description" name="description">
+      </div>
+    </div>
+
+    <!-- loop thru categories -->
+    <div class="form-group">
+      {% for catalog in catalogs%}
+        <label class="radio-inline">
+          <input type="radio" name="catalog_id" value="{{ catalog.id }}">  {{ catalog.name }}
+          <br>
+        </label>
+      {% endfor %}
+    </div>
+
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+
+      <a href="{{ url_for('catalogs', catalogs = catalogs)}}" class="cancelLink">Cancel</a>
+
+</form>
+
+{% endblock %}

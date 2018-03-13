@@ -1,0 +1,8 @@
+{% extends "login.html" %}
+{% block body %}
+<h1 class="black">Are you sure you want to delete {{ deleteItem.name }} ?</h1>
+<form action="{{ url_for('catalogDeleteItem', catalog_id = deleteItem.catalog_id, catalog_item_id = deleteItem.id ) }}" method="post">
+  <input type="submit" value="Delete" class="btn btn-danger">
+  <a href="{{url_for('catalogItems', catalog_id = deleteItem.catalog_id)}}">Cancel</a>
+</form>
+{% endblock %}

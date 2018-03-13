@@ -1,0 +1,28 @@
+{% extends "logout.html" %}
+{% block body %}
+<!-- main header -->
+  <h1 class="black">Latest Items</h1>
+
+  <!-- flash messages -->
+  {% with messages = get_flashed_messages()%}
+    {% if messages %}
+      <ul>
+        {% for message in messages %}
+        <li>
+          <strong>{{ message }}</strong>
+        </li>
+        {%  endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+
+  {% for item in catalogItems %}
+    <!-- catalog item name -->
+    <p>
+    <a href="{{url_for('catalogItemInfo', catalog_id = item.catalog_id, catalog_item_id = item.id)}}" class="catalogItem">{{ item.name }}</a>
+    </p>
+    <!-- catalog name -->
+    <p>Category {{ item.catalog.name  }}</p>
+    </br>
+  {% endfor %}
+{% endblock %}

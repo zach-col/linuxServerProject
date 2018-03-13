@@ -1,0 +1,12 @@
+{% extends "login.html" %}
+{% block body %}
+<!-- catalog item name -->
+<h1 class="black">{{ catalogItem.name }}</h1>
+<!-- catalog item description -->
+<p class="catalogItemDescription">{{ catalogItem.description }}</p>
+<!-- edit item link -->
+<a href="{{url_for('catalogEditItem', catalog_id = catalogItem.catalog.id, catalog_item_id = catalogItem.id )}}">Edit</a>
+</br>
+<!-- delete item link -->
+<a href="{{url_for('catalogDeleteItem', catalogs = catalogs, catalog_id = catalogItem.catalog.id, catalog_item_id = catalogItem.id)}}">Delete</a>
+{% endblock %}
