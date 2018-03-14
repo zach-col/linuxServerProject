@@ -1,3 +1,5 @@
+Currently trying to get database to populate also having issue of google sign in
+
 Item catalog allows you to catalog items for different sports.
 
 to get started
