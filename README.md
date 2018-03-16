@@ -1,3 +1,13 @@
+IP_address 18.219.108.1
+
+Port 2200
+
+Url http://18.219.108.1.xip.io/
+
+sources are
+https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps
+udacity forums
+
 log into server ssh -i ~/.ssh/linuxCourse.pem ubuntu@your_ip_address_here
 1 update server
 $ sudo apt-get update
